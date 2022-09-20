@@ -96,13 +96,34 @@ def loadimagetwo():
     #plt.imshow(image_data, cmap='gray')
     #ifits.mpl_normalize(image_data, stretch=LinearStretch,clip = False)
     #norm = simple_norm(image_data, 'sqrt')
-    #stretch = SqrtStretch()
+    stretch = SqrtStretch()
     #stretch([-1., 0., 0.5, 1., 1.5],clip = False)
+   
+
+    #stretch = LinearStretch(slope = 0.5, intercept = 0.5)
+
+
     
+    #stretch = LinearStretch(slope = 0.5, intercept = 0.5) + SinhStretch() +  LinearStretch(slope = 0.5, intercept = 0.5)
+    
+
+    #stretch = SinhStretch() + SinhStretch() + SinhStretch()
+
+
+
+
+
     norm = ImageNormalize(image_data, interval = MinMaxInterval(), stretch = SqrtStretch())
     
-    stretch = LinearStretch(slope = 0.5, intercept = 0.5) + SinhStretch() +  LinearStretch(slope = 2, intercept = -1)
-    #norm = ImageNormalize(stretch=stretch, vmin = -5, vmax = 5)
+    #stretch = LinearStretch(slope = 0.5, intercept = 0.5) + SinhStretch() +  LinearStretch(slope = 2, intercept = -1)
+    #stretch = LinearStretch(slope = 0.1, intercept = 0.1)
+    #norm = ImageNormalize(stretch=stretch, vmin = 1, vmax = 0)
+    #stretch = SqrtStretch()
+    #norm = ImageNormalize(stretch=SqrtStretch(), vmin = 0, vmax = 65536)
+    #stretch = SqrtStretch()
+    #norm = ImageNormalize(stretch=stretch, vmin = 0, vmax = 65536) 
+    #norm = ImageNormalize(stretch=stretch, vmin = 1, vmax = 1)
+    #stretch = SqrtStretch()
     #stretch = SqrtStretch()
     #stretch = SqrtStretch()
     #stretch([-1., 0., 0.5, 1., 1.5],clip = False)
@@ -112,6 +133,10 @@ def loadimagetwo():
     
     plt.imshow(image_data, cmap='gray', origin = 'lower',  norm=norm)
     
+    #plt.imshow(image_data, cmap='gray', origin = 'lower')
+    
+
+
     plt.colorbar()
     plt.grid(False)
     plt.show()
