@@ -112,9 +112,12 @@ def loadimagetwo():
 
 
 
-
+    #Works for manual stretch
     norm = ImageNormalize(image_data, interval = MinMaxInterval(), stretch = SqrtStretch())
     
+
+
+
     #stretch = LinearStretch(slope = 0.5, intercept = 0.5) + SinhStretch() +  LinearStretch(slope = 2, intercept = -1)
     #stretch = LinearStretch(slope = 0.1, intercept = 0.1)
     #norm = ImageNormalize(stretch=stretch, vmin = 1, vmax = 0)
@@ -131,8 +134,17 @@ def loadimagetwo():
 
     #plt.imshow(image_data, cmap='gray', vmin=2E3, vmax=3E3)
     
-    plt.imshow(image_data, cmap='gray', origin = 'lower',  norm=norm)
+
+    #Works for manual stretch
+    #plt.imshow(image_data, cmap='gray', origin = 'lower',  norm=norm)
     
+
+    #plt.imshow(image_data, cmap='gray', origin = 'lower', vmin = 0.0003, vmax = 0.015)
+    
+
+    plt.imshow(image_data, cmap='gray', origin = 'lower', vmin = 0.00212, vmax = 0.010)
+    
+
     #plt.imshow(image_data, cmap='gray', origin = 'lower')
     
 
